@@ -14,7 +14,7 @@ function BasicExample({updt,setUpdt,visible,setVisible,Inputs}) {
     const data=async()=>{
        const dat=await getUsers()
        setInput(dat)
-       console.log(dat)
+      
     }
    
     useEffect(()=>{
