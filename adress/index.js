@@ -1,7 +1,12 @@
+import NextCors from 'nextjs-cors'
 const BASE_URL="http://localhost:3000"
-export const getUsers=async()=>{
+export const getUsers=async ()=>{
     try{
-    const fetchdata1= await fetch(`${BASE_URL}/api/users/user`)
+        const Options={
+            method:"GET",
+            headers:{"Content-Type":"application/json"}}
+
+    const fetchdata1= await  fetch(`${BASE_URL}/api/users/user`,Options)
     const jsondata=await fetchdata1.json()
     return jsondata
     }
@@ -17,7 +22,7 @@ export const addUser=async(formdata)=>{
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(formdata)
         }
-    const fetchdata= await fetch(`${BASE_URL}/api/users/user`,Options)
+    const  fetchdata= await fetch(`${BASE_URL}/api/users/user`,Options)
     const jsondata=await fetchdata.json()
     return jsondata
     }
@@ -48,7 +53,7 @@ export const deleteUser=async(userId)=>{
           
             
         }
-    const fetchdata= await fetch(`${BASE_URL}/api/users/user`,Options)
+    const fetchdata= await NextCors(fetch(`${BASE_URL}/api/users/user`,Options))
     const jsondata=await fetchdata.json()
     return jsondata
     }

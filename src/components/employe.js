@@ -8,17 +8,18 @@ import { deleteUser, getUsers, updateUser } from 'adress';
 import Swal from 'sweetalert2'
 
 
-function BasicExample({updt,setUpdt,visible,setVisible,Inputs}) {
-    const[Input,setInput]=useState([])
+function BasicExample({updt,setUpdt,visible,setVisible,Inputs,setInputs}) {
+    // const[Input,setInput]=useState([])
     
     const data=async()=>{
        const dat=await getUsers()
-       setInput(dat)
+      return setInputs(dat)
       
     }
    
     useEffect(()=>{
-data()
+    data()
+      
     },[])
     const remove=(employ)=>{
         const swalWithBootstrapButtons = Swal.mixin({
@@ -39,7 +40,7 @@ data()
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
-                setInput(()=>Input.filter((ipt,id)=>ipt._id!==employ._id))
+                setInputs(()=>Inputs.filter((ipt,id)=>ipt._id!==employ._id))
                 deleteUser(employ.name)
               swalWithBootstrapButtons.fire(
                 'Deleted!',
@@ -74,7 +75,7 @@ data()
         </tr>
       </thead>
       <tbody>
-        {Input.map((employ,index)=>(
+        {Inputs.map((employ,index)=>(
         <tr key={index}>
           <td><span className='imagespan'><Image src={`/images/image${index}.jpg`}  width="30" height='30'  alt="logo" className='img'/></span>{employ.name} {employ.lastname}</td>
           <td>{employ.email}</td>
