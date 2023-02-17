@@ -12,12 +12,12 @@ import Load from './loader'
   const[Inputs,setInputs]=useState([])
 useEffect(()=>{
   setTimeout(()=>{
-    // setLoa(false)
+    setLoa(false)
   },5000)
 },[])
   return (
     <main >
-{!loa?
+{loa?
 <Load/>
 :<div>
 <Createform updt={updt} setUpdt={setUpdt} visible={visible} setVisible={setVisible} setInputs={setInputs} Inputs={Inputs}/>
