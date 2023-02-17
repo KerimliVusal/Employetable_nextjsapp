@@ -19,7 +19,7 @@ function BasicExample({updt,setUpdt,visible,setVisible,Inputs}) {
    
     useEffect(()=>{
 data()
-    },[Inputs])
+    },[])
     const remove=(employ)=>{
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
@@ -59,9 +59,7 @@ data()
           })
     
     }
-    const update=()=>{
-        
-    }
+   
    
   return (
     <Table striped bordered hover>
@@ -76,7 +74,7 @@ data()
         </tr>
       </thead>
       <tbody>
-        {Input.map((employ,index)=>(
+        {Input?.map((employ,index)=>(
         <tr key={index}>
           <td><span className='imagespan'><Image src={`/images/image${index}.jpg`}  width="30" height='30'  alt="logo" className='img'/></span>{employ.name} {employ.lastname}</td>
           <td>{employ.email}</td>
