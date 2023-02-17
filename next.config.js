@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'employetable-nextjsapp.vercel.app/:path*',
+        destination: 'https://employetable-nextjsapp.vercel.app/:path*',
       },
     ]
   },
