@@ -1,9 +1,7 @@
 
-import { addUser } from "adress";
-import Link from "next/link";
 import '../app/globals.css'
 
-const Navbar=({loa})=>{
+const Navbar=()=>{
    
     return(<div >
      

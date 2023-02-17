@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       */}
       <body>
       
-        
+        <header><Navbar/></header>
       <main> {children}</main> 
       <footer></footer>
         
