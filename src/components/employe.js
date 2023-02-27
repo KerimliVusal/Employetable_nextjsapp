@@ -75,7 +75,7 @@ function BasicExample({updt,setUpdt,visible,setVisible,Inputs,setInputs}) {
         </tr>
       </thead>
       <tbody>
-        {Inputs.map((employ,index)=>(
+        {Inputs?.map((employ,index)=>(
         <tr key={index}>
           <td><span className='imagespan'><Image src={`/images/image${index}.jpg`}  width="30" height='30'  alt="logo" className='img'/></span>{employ.name} {employ.lastname}</td>
           <td>{employ.email}</td>
